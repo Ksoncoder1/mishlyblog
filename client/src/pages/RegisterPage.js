@@ -6,7 +6,7 @@ export default function RegisterPage (){
 
     async function register(ev){
         ev.preventDefault();
-        const response = await fetch(`{baseURL}/register`, {
+        const response = await fetch(`${baseURL}/register`, {
         //const response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({userName, password}),
