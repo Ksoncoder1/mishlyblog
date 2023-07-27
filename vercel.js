@@ -10,6 +10,6 @@
   {
     "rewrites": [
         "source": "/api/(.*)",
-        "destination": "/api "
+        "destination": "/api/index.js"
     ]
   }
