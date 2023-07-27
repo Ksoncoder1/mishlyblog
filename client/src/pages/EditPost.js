@@ -17,8 +17,10 @@ export default function EditPost() {
     const [files, setFiles] = useState('');
     //const [cover, setCover] = useState('');
     const [redirect, setRedirect] = useState(false );
+    const baseURL = import.meta.env.REACT_API_BASE_URL;
     useEffect(() => {
-        fetch('https://mishlyblog-api.vercel.app/post/'+id)
+        //fetch('https://mishlyblog-api.vercel.app/post/'+id)
+        fetch(`${baseURL}/post/`+id)
         .then(response =>{
             response.json().then(postInfo => {
                 setTitle(postInfo.title);
@@ -38,8 +40,7 @@ export default function EditPost() {
         if(files?.[0]){
             data.set('file', files?.[0]);
         }
-        const url = `${process.env.REACT_APP_API_URL}/post`;
-        const response = await fetch('https://mishlyblog-api.vercel.app/post', {
+        const response = await fetch(`${baseURL}/post`, {
         //const response = await fetch(url, {
             method: 'PUT',
             body: data,
