@@ -18,9 +18,9 @@ const Post = require('./models/Post');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const allowedOrigins = ['https://mishlyblog-client.vercel.app'];
-//app.use(cors({credentials:true, origin:'https://mishlyblog-client.vercel.app'}));
-app.use(
+//const allowedOrigins = ['https://mishlyblog-client.vercel.app'];
+app.use(cors({credentials:true, origin:'https://mishlyblog-client.vercel.app'}));
+{/*app.use(
     cors({
         credentials:true, 
         origin: (origin, callback) => {
@@ -31,7 +31,7 @@ app.use(
             }
           },
         })
-);
+); */}
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -150,12 +150,12 @@ app.get('/post/:id', async (req, res) => {
     res.json(postDoc);
 });
 
-{/*if (process.env.API_PORT) {
+if (process.env.API_PORT) {
     app.listen(process.env.API_PORT);
 }
-module.exports = app; */}
-const port = process.env.PORT || 3000;
+module.exports = app; 
+{/*const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-});
+}); */}
 //mongodb+srv://blog:7oxrMWodDyRiteAI@cluster0.8st4wdh.mongodb.net/?retryWrites=true&w=majority
