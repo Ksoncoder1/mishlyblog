@@ -10,8 +10,8 @@ export default function LoginPage (){
     async function login(ev) {
         ev.preventDefault();
         const baseURL = process.env.REACT_API_BASE_URL;
-        //const response = await fetch(`${baseURL}/login`, {
-        const response = await fetch("https://mishlyblog-api.vercel.app/api/login", {
+        const response = await fetch(`${baseURL}/login`, {
+        //const response = await fetch("https://mishlyblog-api.vercel.app/api/login", {
             method: 'POST',
             body: JSON.stringify({userName, password}),
             headers:{'Content-Type':'text/plain'},
