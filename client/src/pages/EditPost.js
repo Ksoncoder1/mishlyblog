@@ -18,7 +18,7 @@ export default function EditPost() {
     //const [cover, setCover] = useState('');
     const [redirect, setRedirect] = useState(false );
     useEffect(() => {
-        fetch('http://localhost:4000/post/'+id)
+        fetch('mishlyblog-api.vercel.app/post/'+id)
         .then(response =>{
             response.json().then(postInfo => {
                 setTitle(postInfo.title);
@@ -39,7 +39,7 @@ export default function EditPost() {
             data.set('file', files?.[0]);
         }
         const url = `${process.env.REACT_APP_API_URL}/post`;
-        const response = await fetch('http://localhost:4000/post', {
+        const response = await fetch('mishlyblog-api.vercel.app/post', {
         //const response = await fetch(url, {
             method: 'PUT',
             body: data,
