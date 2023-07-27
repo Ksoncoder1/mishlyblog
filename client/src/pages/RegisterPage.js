@@ -2,11 +2,11 @@ import {useState} from 'react';
 export default function RegisterPage (){
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const url = `${process.env.REACT_APP_API_URL}/register`;
+    const baseURL = import.meta.env.REACT_API_BASE_URL;
 
     async function register(ev){
         ev.preventDefault();
-        const response = await fetch('https://mishlyblog-api.vercel.app/register', {
+        const response = await fetch(`{baseURL}/register`, {
         //const response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({userName, password}),
