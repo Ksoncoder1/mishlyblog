@@ -2,7 +2,7 @@ import {formatISO9075} from "date-fns";
 import {Link} from 'react-router-dom';
 //import datascience from './images/datascience.png';
 export default function Post({_id, title, summary, cover, content, createdAt, author}) {
-  const baseURL = import.meta.env.REACT_API_BASE_URL;
+  const baseURL = process.env.REACT_API_BASE_URL;
     return (
       <div className='post'>
         <div className='image'>
