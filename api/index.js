@@ -18,8 +18,20 @@ const Post = require('./models/Post');
 const dotenv = require('dotenv');
 dotenv.config();
 
-
-app.use(cors({credentials:true, origin:'https://mishlyblog-client.vercel.app'}));
+const allowedOrigins = ['https://mishlyblog-client.vercel.app'];
+//app.use(cors({credentials:true, origin:'https://mishlyblog-client.vercel.app'}));
+app.use(
+    cors({
+        credentials:true, 
+        origin: (origin, callback) => {
+            if (allowedOrigins.includes(origin) || !origin) {
+              callback(null, true);
+            } else {
+              callback(new Error('Not allowed by CORS'));
+            }
+          },
+        })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
