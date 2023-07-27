@@ -2,12 +2,12 @@ import {formatISO9075} from "date-fns";
 import {Link} from 'react-router-dom';
 //import datascience from './images/datascience.png';
 export default function Post({_id, title, summary, cover, content, createdAt, author}) {
-  
+  const baseURL = import.meta.env.REACT_API_BASE_URL;
     return (
       <div className='post'>
         <div className='image'>
           <Link to={`/post/${_id}`}>
-              <img src={'https://mishlyblog-api.vercel.app/' + cover} alt='dataimage' />
+              <img src={`${baseURL}/` + cover} alt='dataimage' />
           </Link>
             
         </div>
