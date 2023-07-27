@@ -9,7 +9,7 @@ export default function LoginPage (){
 
     async function login(ev) {
         ev.preventDefault();
-        const baseURL = import.meta.env.REACT_API_BASE_URL;
+        const baseURL = process.env.REACT_API_BASE_URL;
         const response = await fetch(`${baseURL}/login`, {
         //const response = await fetch(url, {
             method: 'POST',
