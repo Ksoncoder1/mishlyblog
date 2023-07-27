@@ -17,7 +17,7 @@ export default function EditPost() {
     const [files, setFiles] = useState('');
     //const [cover, setCover] = useState('');
     const [redirect, setRedirect] = useState(false );
-    const baseURL = import.meta.env.REACT_API_BASE_URL;
+    const baseURL = process.env.REACT_API_BASE_URL;
     useEffect(() => {
         //fetch('https://mishlyblog-api.vercel.app/post/'+id)
         fetch(`${baseURL}/post/`+id)
