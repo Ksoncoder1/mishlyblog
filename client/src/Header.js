@@ -9,9 +9,7 @@ export default function Header (){
   useEffect(() =>{
     fetch('https://mishlyblog-api.vercel.app/profile', {
     //fetch(`${url}/profile`, {
-      method: 'GET',
       credentials: 'include',
-      mode: 'no-cors',
     }).then(response => {
       response.json().then(userInfo =>{
         //setUsername(userInfo.userName);
