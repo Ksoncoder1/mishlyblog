@@ -7,9 +7,9 @@ export default function PostPage() {
     const [postInfo, setPostInfo] = useState(null);
     const {userInfo} = useContext(UserContext);
     const {id} = useParams();
-    const url = process.env.REACT_APP_API_URL;
+    const baseURL = import.meta.env.REACT_API_BASE_URL;
     useEffect(() => {
-        fetch(`https://mishlyblog-api.vercel.app/post/${id}`)
+        fetch(`${baseURL}/post/${id}`)
         //fetch(`${url}/post/${id}`)
         .then(response => {
             response.json().then(postInfo => {
@@ -36,7 +36,7 @@ export default function PostPage() {
                 </div>
             )}
             <div className="image">
-                <img src={`https://mishlyblog-api.vercel.app/${postInfo.cover}`} alt='postimage' />
+                <img src={`${baseURL}/${postInfo.cover}`} alt='postimage' />
                 {/*<img src={`${url}/${postInfo.cover}`} alt='postimage' />*/}
             </div>
             <div className="content" dangerouslySetInnerHTML={{__html:postInfo.content}} />
