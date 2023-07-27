@@ -10,7 +10,7 @@ export default function RegisterPage (){
         //const response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({userName, password}),
-            headers: {'Content-Type':'application/json'},
+            headers: {'Content-Type':'text/plain'},
         });
         if(response.status === 200){
             alert('Registration successful');
