@@ -5,7 +5,7 @@ import { UserContext } from "./UserContext";
 export default function Header (){
   //const [userName, setUsername] = useState(null);
   const {setUserInfo, userInfo} = useContext(UserContext)
-  const baseURL = import.meta.env.REACT_API_BASE_URL;
+  const baseURL = process.env.REACT_API_BASE_URL;
   useEffect(() =>{
     fetch(`${baseURL}/profile`, {
     //fetch(`${url}/profile`, {
