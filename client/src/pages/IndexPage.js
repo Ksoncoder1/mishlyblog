@@ -3,9 +3,9 @@ import Post from "../Post";
 
 export default function IndexPage (){
   const [posts, setPosts] = useState([]);
-  const url = `${process.env.REACT_APP_API_URL}/post`;
+  const baseURL = import.meta.env.REACT_API_BASE_URL;
   useEffect(() =>{
-    fetch('https://mishlyblog-api.vercel.app/post').then(response => {
+    fetch(`${baseURL}/post`).then(response => {
     //fetch(url).then(response => {
       response.json().then(posts => {
         setPosts(posts);
