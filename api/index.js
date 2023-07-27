@@ -19,7 +19,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 
-app.use(cors({credentials:true, origin:'https://mishlyblog-client.vercel.app/'}));
+app.use(cors({credentials:true, origin:'https://mishlyblog-client.vercel.app'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
