@@ -34,7 +34,7 @@ export default function CreatePost() {
         data.set('file', files[0]);
         ev.preventDefault();
         console.log(files);
-        const baseURL = import.meta.env.REACT_API_BASE_URL;
+        const baseURL = process.env.REACT_API_BASE_URL;
         const response = await fetch(`${baseURL}/post`, {
         //const response = await fetch(url, {
             method: 'POST',
