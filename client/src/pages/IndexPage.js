@@ -3,7 +3,7 @@ import Post from "../Post";
 
 export default function IndexPage (){
   const [posts, setPosts] = useState([]);
-  const baseURL = import.meta.env.REACT_API_BASE_URL;
+  const baseURL = process.env.REACT_API_BASE_URL;
   useEffect(() =>{
     fetch(`${baseURL}/post`).then(response => {
     //fetch(url).then(response => {
