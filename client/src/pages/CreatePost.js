@@ -34,8 +34,8 @@ export default function CreatePost() {
         data.set('file', files[0]);
         ev.preventDefault();
         console.log(files);
-        const url = `${process.env.REACT_APP_API_URL}/post`;
-        const response = await fetch('https://mishlyblog-api.vercel.app/post', {
+        const baseURL = import.meta.env.REACT_API_BASE_URL;
+        const response = await fetch(`${baseURL}/post`, {
         //const response = await fetch(url, {
             method: 'POST',
             body: data,
