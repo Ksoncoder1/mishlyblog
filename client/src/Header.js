@@ -7,7 +7,7 @@ export default function Header (){
   const {setUserInfo, userInfo} = useContext(UserContext)
   const url = process.env.REACT_APP_API_URL;
   useEffect(() =>{
-    fetch('https://mishlyblog-api.vercel.app/profile', {
+    fetch('https://mishlyblog-api.vercel.app', {
     //fetch(`${url}/profile`, {
       credentials: 'include',
     }).then(response => {
