@@ -5,7 +5,7 @@ export default function IndexPage (){
   const [posts, setPosts] = useState([]);
   const url = `${process.env.REACT_APP_API_URL}/post`;
   useEffect(() =>{
-    fetch('http://localhost:4000/post').then(response => {
+    fetch('mishlyblog-api.vercel.app/post').then(response => {
     //fetch(url).then(response => {
       response.json().then(posts => {
         setPosts(posts);
