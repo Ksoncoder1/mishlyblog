@@ -5,9 +5,9 @@ import { UserContext } from "./UserContext";
 export default function Header (){
   //const [userName, setUsername] = useState(null);
   const {setUserInfo, userInfo} = useContext(UserContext)
-  const url = process.env.REACT_APP_API_URL;
+  const baseURL = import.meta.env.REACT_API_BASE_URL;
   useEffect(() =>{
-    fetch('https://mishlyblog-api.vercel.app/profile', {
+    fetch(`${baseURL}/profile`, {
     //fetch(`${url}/profile`, {
       credentials: 'include',
     }).then(response => {
@@ -20,7 +20,7 @@ export default function Header (){
   }, [])
 
   function logout() {
-    fetch('https://mishlyblog-api.vercel.app/logout', {
+    fetch(`${baseURL}/logout`, {
     //fetch(`${url}/logout`, {
       credentials: 'include',
       method: 'POST',
