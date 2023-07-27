@@ -2,7 +2,7 @@ import {useState} from 'react';
 export default function RegisterPage (){
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const baseURL = import.meta.env.REACT_API_BASE_URL;
+    const baseURL = process.env.REACT_API_BASE_URL;
 
     async function register(ev){
         ev.preventDefault();
